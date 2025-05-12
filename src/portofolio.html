@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Projects</title>
+  <link rel="stylesheet" href="/css/about.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  integrity="sha512-...your-integrity-hash..."
+  crossorigin="anonymous"
+/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="container nav">
+      <div class="logo"> K<span>E</span>N<span>Z</span>O<span>.</div>
+      <div class="menu-icon" id="menu-icon">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="portofolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="talk-button">
+         
+        </li>
+      </ul>
+      <a href="contact.html" class="btn talk">Let’s Talk</a>
+    </div>
+  </header><br><br>
+
+  <!-- Main Projects Section -->
+  <section class="about-section fade-in">
+    <div class="container about-content">
+      <div class="about-text">
+        <h1>My Projects</h1>
+        <p>Here are some of the projects I've worked on to practice and showcase my skills:</p>
+  
+        <div class="projects-grid">
+          <!-- Project 1 --> 
+          <div class="project-card">
+             <img src="pic/kenzoportofolio.png" alt="Project 1 Screenshot" class="project-image"> 
+            <div class="project-info">
+              <h3> Personal Portfolio Website (this site)</h3>
+              <p>A modern, responsive portfolio built with HTML, CSS, and JavaScript to showcase my bio, skills, and contact details.</p>
+            </div>
+          </div>
+  
+          <!-- Project 2 -->
+          <div class="project-card">
+            <img src="pic/demo2resized.png"   alt="Project 2 Screenshot" class="project-image">
+            <div class="project-info">
+              <h3>User management system</h3>
+             <p>"Developed a secure REST API with Express and TypeScript, 
+              integrated into a responsive HTML/CSS dashboard 
+              for user registration, login, and account management</p>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container footer-content">
+      <div class="social-icons">
+        <!-- LinkedIn (using linkedin-in icon) -->
+        <a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      
+        
+        <!-- Instagram (same as before) -->
+        <a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        
+        <!-- GitHub (new addition) -->
+        <a href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <p>&copy; K<span>E</span>N<span>Z</span>O<span>.</span></p>
+    </div>
+  </footer>
+
+  <!-- Script for Menu -->
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const navLinks = document.getElementById("nav-links");
+    menuIcon.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
