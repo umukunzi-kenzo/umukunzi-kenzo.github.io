@@ -370,14 +370,16 @@
   }
 }
 
+
+/* Updated Projects Section */
 .projects-grid {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  margin-top: 2rem;
-  align-items: center; /* Add this line */
-  width: 100%; /* Add this line */
-  justify-content: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 1000px; /* Increased max width */
+  padding: 0 20px;
 }
 
 .project-card {
@@ -385,46 +387,68 @@
   border-radius: 12px;
   overflow: hidden;
   display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-  padding: 1.5rem;
+  flex-direction: column; /* Changed to column layout */
+  gap: 0; /* Remove gap between description and image */
+  padding: 0; /* Remove padding from parent */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%; /* Controls card width on large screens */
-  max-width: 920px;
+  width: 100%;
   
 }
 
+/* New description card */
+.project-description-card {
+  padding: 1.5rem;
+  background: rgba(46, 46, 56, 0.8); /* Slightly different background */
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.project-image-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  object-fit: fill;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-info {
+  color: var(--text-color);
+  padding: 0 1.5rem 1.5rem;
+}
+
+/* Hover effects */
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-.project-image {
-  width: 410px;
-  height:230px;
-  border-radius: 10px;
-  object-fit: fill;
+.project-card:hover .project-image {
+  transform: scale(1.03);
 }
 
-.project-info {
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  .project-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .projects-grid {
+    padding: 2px 2px;
+    
     
   }
-
+  
   .project-image {
-    width: 100%;
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-image {
+    min-height: 200px;
   }
 }
 
