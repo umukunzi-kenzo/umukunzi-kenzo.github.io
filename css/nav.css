@@ -1,0 +1,195 @@
+/* ===== SHARED NAVBAR (used on every page) ===== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 0.9rem 0;
+  background-color: rgb(var(--bg-rgb, 26 28 44) / 0.85);
+  border-bottom: 1px solid var(--line, rgba(240, 240, 240, 0.1));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  animation: none;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.nav-logo span {
+  color: var(--accent-color);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--accent-color);
+}
+
+/* "Let's Talk" inside the menu: only shown on small screens */
+.nav-menu-cta {
+  display: none;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-cta {
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  font-weight: bold;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.nav-cta:hover {
+  background-color: var(--hover-accent);
+  color: var(--bg-color);
+}
+
+/* Hamburger button (hidden on big screens) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Turn the three lines into an X when the menu is open */
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== SMALL SCREENS ===== */
+@media (max-width: 768px) {
+  .nav-logo {
+    font-size: 1.5rem;
+  }
+
+  /* The bar only has the logo and the menu button */
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+    margin-right: -10px; /* lines the lines up with the page edge */
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0 5%;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--line, rgba(240, 240, 240, 0.1));
+    box-shadow: 0 18px 30px rgba(23, 24, 28, 0.08);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.4s;
+  }
+
+  .nav-menu.open {
+    max-height: 440px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid var(--line, rgba(240, 240, 240, 0.1));
+  }
+
+  .nav-menu li:first-child {
+    border-top: none;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.05rem;
+  }
+
+  /* "Let's Talk" becomes a green button at the bottom of the menu */
+  .nav-menu .nav-menu-cta {
+    display: block;
+    padding: 1rem 0 1.4rem;
+  }
+
+  .nav-menu .nav-menu-cta a {
+    padding: 0.85rem 1.2rem;
+    border-radius: 999px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font-weight: 700;
+  }
+
+  .nav-menu .nav-menu-cta a:hover {
+    background-color: var(--hover-accent);
+    color: var(--bg-color);
+  }
+}
+
+/* Very small phones (320px to 380px) */
+@media (max-width: 380px) {
+  .nav-logo {
+    font-size: 1.3rem;
+  }
+}

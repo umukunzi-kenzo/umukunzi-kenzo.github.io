@@ -1,0 +1,399 @@
+/* ===== BASE: shared by every modernized page ===== */
+
+:root {
+  /* Palette: ivory, ink, deep green */
+  --bg-color: #f7f4ee;
+  --bg-rgb: 247 244 238;
+  --surface: #ffffff;
+  --surface-2: #efeae0;
+  --text-color: #17181c;
+  --text-soft: #3d4148;
+  --muted: #6b6f76;
+  --accent-color: #2f5d50;
+  --accent-rgb: 47 93 80;
+  --hover-accent: #234a3f;
+  --line: rgba(23, 24, 28, 0.1);
+
+  /* Fonts (loaded by the <link> in each page's <head>) */
+  --font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', Consolas, 'Courier New', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Smooth scrolling for "Back to top" (only if the user allows motion) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-display);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgb(var(--accent-rgb) / 0.2);
+}
+
+/* Elegant serif for the big headings */
+h1,
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  overflow-wrap: break-word;
+}
+
+/* Fine paper grain over the whole page */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+/* Safety: hides the old button markup if an old page is still around */
+.to-top {
+  display: none !important;
+}
+
+/* ===== BUTTONS ===== */
+.btn-solid,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 44px; /* easy to tap on phones */
+  padding: 0.95rem 1.7rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-solid {
+  background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  color: var(--bg-color);
+}
+
+.btn-solid:hover {
+  background-color: var(--hover-accent);
+  border-color: var(--hover-accent);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border: 2px solid rgb(var(--accent-rgb) / 0.4);
+  color: var(--accent-color);
+}
+
+.btn-ghost:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 1100;
+  pointer-events: none;
+}
+
+/* ===== MOUSE GLOW (desktop mouse only) ===== */
+.spotlight {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 640px;
+  margin: -320px 0 0 -320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(var(--accent-rgb) / 0.08), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+html.has-cursor .spotlight {
+  display: block;
+}
+
+/* ===== FLOATING "BACK TO TOP" (transparent words, appears when you scroll) ===== */
+.top-btn {
+  position: fixed;
+  right: 1.75rem;
+  bottom: 1.5rem;
+  z-index: 1200;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.1rem 0.85rem;
+  background: none;
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  /* Soft ivory glow keeps the words readable when they float over text */
+  text-shadow: 0 0 10px var(--bg-color), 0 0 18px var(--bg-color), 0 0 26px var(--bg-color);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px);
+  filter: blur(6px);
+  transition: opacity 0.5s ease,
+    visibility 0.5s,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease,
+    color 0.3s ease,
+    letter-spacing 0.4s ease;
+}
+
+.top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  filter: none;
+}
+
+.top-btn:hover {
+  color: var(--hover-accent);
+  letter-spacing: 0.06em;
+  transform: translateY(-3px);
+}
+
+/* Safety: hides the old round-button ring if an old page is still around */
+.top-btn svg {
+  display: none;
+}
+
+/* Faint line under the words (the track) */
+.top-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: rgb(var(--accent-rgb) / 0.18);
+}
+
+/* Green line that grows while you scroll down the page */
+.top-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.15s linear, height 0.3s ease;
+}
+
+.top-btn:hover .top-bar {
+  height: 3px;
+}
+
+/* Arrow: floats by itself, and swaps for a fresh arrow on hover */
+.top-btn .arrow {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  font-size: 0.95rem;
+  animation: arrow-idle 2s ease-in-out infinite;
+}
+
+.top-btn .arrow i {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.top-btn .arrow i:last-child {
+  transform: translateY(130%);
+}
+
+.top-btn:hover .arrow i:first-child {
+  transform: translateY(-130%);
+}
+
+.top-btn:hover .arrow i:last-child {
+  transform: translateY(0);
+}
+
+@keyframes arrow-idle {
+  0%, 100% { transform: translateY(1px); }
+  50% { transform: translateY(-2px); }
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  padding: 3.5rem 0 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer-line {
+  max-width: 16em;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+/* Social icons as small round buttons */
+.social-icons {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; /* easy to tap on phones */
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ===== SMALL SCREENS ===== */
+@media (max-width: 768px) {
+  /* The grain overlay can make scrolling jerky on low-end phones */
+  body::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    padding-top: 2.5rem;
+  }
+
+  /* Footer content is centered on phones */
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-line {
+    max-width: none;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .top-btn {
+    right: 1.1rem;
+    bottom: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Respect people who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+  .top-btn,
+  .top-bar,
+  .top-btn .arrow i {
+    transition: none;
+  }
+
+  .top-btn .arrow {
+    animation: none;
+  }
+}

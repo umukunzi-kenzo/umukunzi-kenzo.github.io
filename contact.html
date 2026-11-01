@@ -2,101 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contacts</title>
-  <link rel="stylesheet" href="/css/about.css" />
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  integrity="sha512-...your-integrity-hash..."
-  crossorigin="anonymous"
-/>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <div class="container nav">
-      <div class="logo"> K<span>E</span>N<span>Z</span>O<span>.</div>
-      <div class="menu-icon" id="menu-icon">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="portofolio.html">Portfolio</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="talk-button">
-         
-        </li>
-      </ul>
-      <a href="contact.html" class="btn talk">Let’s Talk</a>
-    </div>
-  </header><br><br>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Umukunzi C. Kenzo</title>
+  <meta name="description" content="Get in touch with Umukunzi C. Kenzo, a full-stack developer in Rwanda." />
+  <meta name="theme-color" content="#f7f4ee" />
+  <link rel="canonical" href="https://umukunzi-kenzo.github.io/contact.html" />
 
-  <!-- Main Projects Section -->
-  <section class="about-section fade-in">
-    <div class="container about-content">
-      <div class="about-text">
-        <h1>Contacts</h1>
-        <p>If you're interested in working with me please reach out:</p>
-  
-        <div class="contact-grid">
-          <!-- Project 1 -->
-          <div class="contact-card">
-            <div class="project-info">
-              <!-- LinkedIn -->
-              <h3><a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">linkedin <i class="fab fa-linkedin-in"></i></a></h3>
-              
-              <!-- WhatsApp -->
-              <h3><a href="https://wa.me/0795334848" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">whatsapp <i class="fab fa-whatsapp"></i></a></h3>
-              
-              <!-- Instagram -->
-              <h3><a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">instagram <i class="fab fa-instagram"></i></a></h3>
-              
-              <!-- Email (Updated with your address) -->
-              <h3>  <a href="mailto:umukunzicevinkenzo7@gmail.com?subject=Portfolio%20Inquiry%20-%20Kenzo" aria-label="Email Kenzo"   >email <i class="fas fa-envelope"></i></a></h3>
-            </div>
-               
-              <p></p>
-            </div>
-          </div>
-  
-           
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Umukunzi C. Kenzo" />
+  <meta property="og:title" content="Contact | Umukunzi C. Kenzo" />
+  <meta property="og:description" content="Get in touch with Umukunzi C. Kenzo, a full-stack developer in Rwanda." />
+  <meta property="og:url" content="https://umukunzi-kenzo.github.io/contact.html" />
+  <meta property="og:image" content="https://umukunzi-kenzo.github.io/pic/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Umukunzi C. Kenzo, full-stack developer in Rwanda" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/contact-page.css" />
+
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="page-contact">
+
+  <div class="progress"></div>
+  <div class="spotlight"></div>
+
+  <!-- Navbar (same on every page) -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-logo">K<span>E</span>N<span>Z</span>O<span>.</span></a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portofolio.html">Portfolio</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Let’s Talk</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- PAGE HEADING -->
+    <section class="page-head">
+      <p class="status" data-reveal><span class="dot"></span>Based in Rwanda</p>
+      <h1 data-reveal>Let’s <em>talk</em></h1>
+      <p class="lead" data-reveal>If you’re interested in working with me, or just want to say hello, reach out.</p>
+    </section>
+
+    <section class="contact-grid">
+
+      <!-- EMAIL -->
+      <div class="direct" data-reveal>
+        <span class="mono">Email me</span>
+        <a class="mail-big" href="mailto:umukunzicevinkenzo7@gmail.com?subject=Portfolio%20Inquiry%20-%20Kenzo">umukunzicevinkenzo7@gmail.com</a>
+        <div class="direct-meta">
+          <button type="button" class="copy-btn" id="copy-email">
+            <i class="far fa-copy"></i><span>Copy email</span>
+          </button>
+          <p class="local-time"><span class="dot"></span><span id="local-time-text">Based in Rwanda</span></p>
         </div>
       </div>
-    </div>
-  </section>
-  
 
-  <footer>
-    <div class="container footer-content">
-      <div class="social-icons">
-        <!-- LinkedIn (using linkedin-in icon) -->
-        <a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
+      <!-- PROJECT FORM -->
+      <form class="form-card" id="contact-form" novalidate data-reveal>
+        <h2>Tell me about your project</h2>
+        <p class="form-sub">Fill this in and it opens WhatsApp or your email app with the message ready to send.</p>
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" />
+        </div>
+
+        <fieldset class="field">
+          <legend>I’m looking for</legend>
+          <div class="topics">
+            <label class="topic"><input type="radio" name="topic" value="a website" checked /><span>A website</span></label>
+            <label class="topic"><input type="radio" name="topic" value="a web app" /><span>A web app</span></label>
+            <label class="topic"><input type="radio" name="topic" value="something else" /><span>Something else</span></label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What are you building? Any deadline in mind?"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-solid" data-send="whatsapp"><i class="fab fa-whatsapp"></i> Send on WhatsApp</button>
+          <button type="button" class="btn-ghost" data-send="email"><i class="fas fa-envelope"></i> Send by email</button>
+        </div>
+
+        <p class="form-hint" id="form-hint" aria-live="polite"></p>
+      </form>
+
+      <!-- OTHER CHANNELS -->
+      <div class="rows">
+        <a class="row" href="https://wa.me/250795334848" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="row-icon"><i class="fab fa-whatsapp"></i></span>
+          <span class="row-text"><strong>WhatsApp</strong><span>+250 795 334 848</span></span>
+          <i class="fas fa-arrow-right row-arrow"></i>
         </a>
-        
-         
-        <!-- Instagram (same as before) -->
-        <a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
+
+        <a class="row" href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="row-icon"><i class="fab fa-linkedin-in"></i></span>
+          <span class="row-text"><strong>LinkedIn</strong><span>umukunzi-cevin-kenzo</span></span>
+          <i class="fas fa-arrow-right row-arrow"></i>
         </a>
-        
-        <!-- GitHub (new addition) -->
-        <a href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fab fa-github"></i>
+
+        <a class="row" href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="row-icon"><i class="fab fa-instagram"></i></span>
+          <span class="row-text"><strong>Instagram</strong><span>@umukunzikenzo</span></span>
+          <i class="fas fa-arrow-right row-arrow"></i>
+        </a>
+
+        <a class="row" href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="row-icon"><i class="fab fa-github"></i></span>
+          <span class="row-text"><strong>GitHub</strong><span>umukunzi-kenzo</span></span>
+          <i class="fas fa-arrow-right row-arrow"></i>
         </a>
       </div>
-      
+
+    </section>
+
+  </main>
+
+  <!-- Footer (same on every page) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <p class="footer-line">Building the web, one project at a time.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Umukunzi C. Kenzo</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Script for Menu -->
-  <script>
-    const menuIcon = document.getElementById("menu-icon");
-    const navLinks = document.getElementById("nav-links");
-    menuIcon.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  </script>
+  <!-- Floating "Back to top" (transparent words, appears after scrolling) -->
+  <a href="#top" class="top-btn" aria-label="Back to top">
+    <span class="label">Back to top</span>
+    <span class="arrow" aria-hidden="true">
+      <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
+    </span>
+    <span class="top-bar"></span>
+  </a>
+
+  <script src="nav.js"></script>
+  <script src="about.js"></script>
+  <script src="contact.js"></script>
 </body>
 </html>

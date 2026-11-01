@@ -1,0 +1,396 @@
+/* ===== PORTFOLIO PAGE (light, elegant) ===== */
+
+.wrap {
+  width: 90%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.page-portfolio .btn-solid {
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+}
+
+/* Hidden first, shown by about.js when scrolled into view */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js [data-reveal].visible {
+  opacity: 1;
+  transform: none;
+}
+
+.js .proj[data-reveal] {
+  transition: opacity 0.7s ease, transform 0.7s ease, border-color 0.3s ease;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+}
+
+/* ===== PAGE HEADING ===== */
+.page-head {
+  padding: 4rem 0 2.5rem;
+}
+
+.page-head h1 {
+  margin: 0.7rem 0 1.2rem;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+.page-head h1 em {
+  font-style: italic;
+  color: var(--accent-color);
+}
+
+.page-head .lead {
+  max-width: 34em;
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+/* ===== PROJECT CARDS ===== */
+.proj-list {
+  display: grid;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.proj {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 2.4rem;
+  align-items: center;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(23, 24, 28, 0.04), 0 14px 34px rgba(23, 24, 28, 0.06);
+}
+
+.proj:hover {
+  border-color: rgb(var(--accent-rgb) / 0.5);
+}
+
+/* Every second card has the screenshot on the right */
+.proj:nth-child(even) .proj-media {
+  order: 2;
+}
+
+/* The media box adapts to the screenshot, so the whole image is visible.
+   When there is no screenshot, the styled name tile is shown instead. */
+.proj-media {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 25% 20%, rgb(var(--accent-rgb) / 0.2), transparent 60%),
+    var(--surface-2);
+}
+
+.proj-media > * {
+  grid-area: 1 / 1;
+}
+
+/* The name tile (only shown when there is no screenshot) */
+.proj-media .fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  padding: 0 1rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-style: italic;
+  text-align: center;
+  color: var(--accent-color);
+}
+
+/* The screenshot: full width, natural height, never cropped */
+.proj-media img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: contain; /* a very tall screenshot is shrunk so all of it fits */
+  border-radius: 12px;
+  background: var(--surface-2);
+  box-shadow: 0 8px 24px rgba(23, 24, 28, 0.14);
+  transition: transform 0.6s ease;
+}
+
+/* When a screenshot exists: hide the tile, keep some height while it loads,
+   and leave a margin around the image so the hover zoom never hides its sides */
+.proj-media:has(img) .fallback {
+  display: none;
+}
+
+.proj-media:has(img) {
+  min-height: 180px;
+  padding: 0.9rem;
+}
+
+.proj:hover .proj-media img {
+  transform: scale(1.035);
+}
+
+.proj-body {
+  min-width: 0;
+  padding: 0.4rem 0.6rem;
+}
+
+.proj-meta {
+  margin: 0 0 0.6rem;
+}
+
+.proj h2 {
+  margin: 0 0 0.7rem;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.proj-summary {
+  margin: 0 0 1rem;
+  line-height: 1.65;
+  color: var(--text-soft);
+}
+
+.proj-points {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.proj-points li {
+  position: relative;
+  padding-left: 1.3rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.proj-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips span {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+/* "Live site" and "GitHub" links under a project */
+.proj-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.3rem;
+}
+
+.proj-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.5rem 1.1rem;
+  border: 1.5px solid rgb(var(--accent-rgb) / 0.4);
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.proj-link:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+/* ===== GITHUB LINK ===== */
+.more {
+  margin: 0 0 3rem;
+}
+
+.more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.more-link span {
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid rgb(var(--accent-rgb) / 0.35);
+  transition: border-color 0.3s ease;
+}
+
+.more-link:hover span {
+  border-color: var(--accent-color);
+}
+
+/* ===== CALL TO ACTION (deep green block) ===== */
+.cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0 4rem;
+  padding: 2.8rem 2.4rem;
+  border-radius: 24px;
+  background: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.cta h2 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.cta p {
+  margin: 0;
+  color: rgb(var(--bg-rgb) / 0.75);
+}
+
+.cta .btn-solid {
+  flex-shrink: 0;
+  background-color: var(--bg-color);
+  border-color: var(--bg-color);
+  color: var(--accent-color);
+}
+
+.cta .btn-solid:hover {
+  background-color: var(--surface);
+  border-color: var(--surface);
+}
+
+/* ===== TABLET (641px to 860px) ===== */
+@media (max-width: 860px) {
+  .proj {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .proj:nth-child(even) .proj-media {
+    order: 0;
+  }
+
+  .proj-media .fallback {
+    aspect-ratio: 16 / 9;
+  }
+
+  .proj-media img {
+    max-height: 420px;
+  }
+
+  .proj-body {
+    padding: 0.2rem 0.5rem 0.6rem;
+  }
+}
+
+/* ===== PHONE (up to 640px): everything centered ===== */
+@media (max-width: 640px) {
+  .page-head {
+    padding: 2.5rem 0 2rem;
+    text-align: center;
+  }
+
+  .page-head .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .proj {
+    padding: 0.9rem;
+    text-align: center;
+  }
+
+  .proj-media:has(img) {
+    padding: 0.6rem;
+  }
+
+  .proj-media img {
+    max-height: 340px;
+  }
+
+  .proj-points li {
+    padding-left: 0;
+  }
+
+  .proj-points li::before {
+    display: none;
+  }
+
+  .chips,
+  .proj-links {
+    justify-content: center;
+  }
+
+  .more {
+    text-align: center;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ===== VERY SMALL PHONE (up to 380px) ===== */
+@media (max-width: 380px) {
+  .page-head h1 {
+    font-size: 2.5rem;
+  }
+
+  .cta {
+    padding: 1.7rem 1.2rem;
+  }
+}
+
+/* Respect people who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+  .proj-media img {
+    transition: none;
+  }
+}

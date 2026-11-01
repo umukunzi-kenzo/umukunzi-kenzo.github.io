@@ -1,0 +1,457 @@
+/* ===== HOME PAGE (light, elegant) ===== */
+
+.wrap {
+  width: 90%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.page-home .btn-solid,
+.page-home .btn-ghost {
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+}
+
+/* Hidden first, shown by about.js when scrolled into view */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js [data-reveal].visible {
+  opacity: 1;
+  transform: none;
+}
+
+.js .work[data-reveal] {
+  transition: opacity 0.7s ease, transform 0.7s ease, background-color 0.3s ease, padding 0.3s ease;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+}
+
+/* ===== HERO ===== */
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 4.5rem 0 4.5rem;
+}
+
+.home-text {
+  min-width: 0; /* lets long words wrap instead of pushing the page wider */
+}
+
+.status {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 0 0 rgb(var(--accent-rgb) / 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  70% { box-shadow: 0 0 0 10px rgb(var(--accent-rgb) / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(var(--accent-rgb) / 0); }
+}
+
+.home-hero h1 {
+  margin: 0 0 1.4rem;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+/* Italic serif name in deep green (same on the About page) */
+.home-hero h1 em {
+  display: block;
+  font-style: italic;
+  color: var(--accent-color);
+}
+
+.lead {
+  max-width: 30em;
+  margin: 0 0 1.9rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+/* ===== HERO PHOTO ===== */
+.home-photo {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 2rem; /* room for the chip hanging below the photo */
+}
+
+.home-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 15%;
+  border: 1px solid var(--line);
+  border-radius: 170px 170px 28px 28px; /* arch shape */
+  box-shadow: 0 30px 60px rgba(23, 24, 28, 0.18);
+}
+
+/* Chip is centered, hanging a bit underneath the photo, on every screen size */
+.photo-chip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -26px;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: 0 10px 24px rgba(23, 24, 28, 0.12);
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  animation: chip-float 4s ease-in-out infinite;
+}
+
+@keyframes chip-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ===== SELECTED WORK ===== */
+.block {
+  padding: 3.2rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.block-title {
+  margin: 0 0 1.8rem;
+}
+
+.block-title h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.work-list {
+  border-top: 1px solid var(--line);
+}
+
+.work {
+  display: grid;
+  grid-template-columns: 3rem 1.4fr 1.2fr auto;
+  grid-template-areas: "num info chips arrow";
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.6rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.work:hover {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  background-color: var(--surface);
+}
+
+.work-num {
+  grid-area: num;
+}
+
+.work-info {
+  grid-area: info;
+  min-width: 0;
+}
+
+.work-info h3 {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.work-info p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.work .chips {
+  grid-area: chips;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips span {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.work-arrow {
+  grid-area: arrow;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--accent-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.4s ease;
+}
+
+.work:hover .work-arrow {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
+  transform: rotate(-45deg);
+}
+
+.more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  margin-top: 1.4rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.more-link span {
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid rgb(var(--accent-rgb) / 0.35);
+  transition: border-color 0.3s ease;
+}
+
+.more-link i {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.more-link:hover span {
+  border-color: var(--accent-color);
+}
+
+.more-link:hover i {
+  transform: translateX(5px);
+}
+
+/* ===== CALL TO ACTION (deep green block) ===== */
+.cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0 4rem;
+  padding: 2.8rem 2.4rem;
+  border-radius: 24px;
+  background: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.cta h2 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.cta p {
+  margin: 0;
+  color: rgb(var(--bg-rgb) / 0.75);
+}
+
+.cta .btn-solid {
+  flex-shrink: 0;
+  background-color: var(--bg-color);
+  border-color: var(--bg-color);
+  color: var(--accent-color);
+}
+
+.cta .btn-solid:hover {
+  background-color: var(--surface);
+  border-color: var(--surface);
+}
+
+/* ===== TABLET (641px to 860px) ===== */
+@media (max-width: 860px) {
+  .home-hero {
+    gap: 2rem;
+  }
+
+  .work {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "info arrow"
+      "chips chips";
+    gap: 1rem 1.5rem;
+  }
+
+  .work-num {
+    display: none;
+  }
+}
+
+/* ===== PHONE (up to 640px): everything centered ===== */
+@media (max-width: 640px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    text-align: center;
+    padding: 2.5rem 0 3rem;
+  }
+
+  /* Photo first, centered, with the chip centered under it */
+  .home-photo {
+    order: -1;
+    justify-self: center;
+    max-width: 210px;
+  }
+
+  .home-photo img {
+    border-radius: 105px 105px 22px 22px;
+  }
+
+  .photo-chip {
+    font-size: 0.82rem;
+  }
+
+  .status {
+    justify-content: center;
+  }
+
+  .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions .btn-solid,
+  .actions .btn-ghost {
+    width: 100%;
+  }
+
+  .block {
+    padding: 2.4rem 0;
+  }
+
+  .block-title {
+    text-align: center;
+  }
+
+  /* Each project is one centered card (the whole row is tappable) */
+  .work {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "info"
+      "chips";
+    justify-items: center;
+    text-align: center;
+  }
+
+  .work:hover {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .work-arrow {
+    display: none;
+  }
+
+  .work-info h3 {
+    font-size: 1.6rem;
+  }
+
+  .work .chips {
+    justify-content: center;
+  }
+
+  .more-link {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ===== VERY SMALL PHONE (up to 380px) ===== */
+@media (max-width: 380px) {
+  .home-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1.05rem;
+  }
+
+  .home-photo {
+    max-width: 170px;
+  }
+
+  .home-photo img {
+    border-radius: 85px 85px 18px 18px;
+  }
+
+  .cta {
+    padding: 1.7rem 1.2rem;
+  }
+}
+
+/* Respect people who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+  .photo-chip,
+  .dot {
+    animation: none;
+  }
+
+  .work-arrow {
+    transition: none;
+  }
+} 

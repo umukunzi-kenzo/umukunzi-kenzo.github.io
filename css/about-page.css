@@ -1,0 +1,370 @@
+/* ===== ABOUT PAGE (light, elegant) ===== */
+
+.wrap {
+  width: 90%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.page-about .btn-solid,
+.page-about .btn-ghost {
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+}
+
+/* Hidden first, shown by about.js when scrolled into view */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js [data-reveal].visible {
+  opacity: 1;
+  transform: none;
+}
+
+.js .tool[data-reveal],
+.js .step[data-reveal] {
+  transition: opacity 0.7s ease, transform 0.7s ease, border-color 0.3s ease;
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  padding: 4.5rem 0 4rem;
+}
+
+.hero > div {
+  min-width: 0; /* lets long words wrap instead of pushing the page wider */
+}
+
+.avatar {
+  width: 220px;
+  height: 270px;
+  flex-shrink: 0;
+  border-radius: 120px 120px 24px 24px; /* arch shape */
+  object-fit: cover;
+  object-position: center 15%;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 50px rgba(23, 24, 28, 0.16);
+}
+
+.status {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 0 0 rgb(var(--accent-rgb) / 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  70% { box-shadow: 0 0 0 10px rgb(var(--accent-rgb) / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(var(--accent-rgb) / 0); }
+}
+
+/* Italic serif name in deep green (same as the Home page) */
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 6.2vw, 4.4rem);
+  font-style: italic;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--accent-color);
+}
+
+.role {
+  margin: 0.6rem 0 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+.lead {
+  max-width: 34em;
+  margin: 0 0 1.8rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+/* ===== SECTIONS ===== */
+.block {
+  padding: 3.2rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.block-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin: 0 0 1.6rem;
+}
+
+.block-title h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+}
+
+.about-text {
+  max-width: 42em;
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+
+/* ===== TOOLBOX ===== */
+.tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.tool {
+  min-width: 0;
+  padding: 1.7rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(23, 24, 28, 0.04), 0 10px 28px rgba(23, 24, 28, 0.05);
+}
+
+.tool:hover {
+  border-color: rgb(var(--accent-rgb) / 0.55);
+}
+
+.tool h3 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips span {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.92rem;
+  color: var(--text-soft);
+}
+
+/* ===== HOW I WORK ===== */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.step {
+  min-width: 0;
+  padding-top: 1.2rem;
+  border-top: 2px solid var(--line);
+}
+
+.step:hover {
+  border-color: var(--accent-color);
+}
+
+.step h3 {
+  margin: 0.5rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.step p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ===== CALL TO ACTION (deep green block) ===== */
+.cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 3rem 0 4rem;
+  padding: 2.8rem 2.4rem;
+  border-radius: 24px;
+  background: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.cta h2 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.cta p {
+  margin: 0;
+  color: rgb(var(--bg-rgb) / 0.75);
+}
+
+.cta .btn-solid {
+  flex-shrink: 0;
+  background-color: var(--bg-color);
+  border-color: var(--bg-color);
+  color: var(--accent-color);
+}
+
+.cta .btn-solid:hover {
+  background-color: var(--surface);
+  border-color: var(--surface);
+}
+
+/* ===== TABLET (641px to 860px) ===== */
+@media (max-width: 860px) {
+  .hero {
+    gap: 2.5rem;
+  }
+
+  .tools {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== PHONE (up to 640px): everything centered ===== */
+@media (max-width: 640px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.8rem;
+    padding: 2.5rem 0 3rem;
+  }
+
+  .hero > div {
+    width: 100%;
+  }
+
+  .avatar {
+    width: 190px;
+    height: 235px;
+    border-radius: 95px 95px 22px 22px;
+  }
+
+  .status {
+    justify-content: center;
+  }
+
+  .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Buttons stack and fill the width, so they are easy to tap */
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions .btn-solid,
+  .actions .btn-ghost {
+    width: 100%;
+  }
+
+  .block {
+    padding: 2.4rem 0;
+  }
+
+  .block-title {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .tool {
+    text-align: center;
+  }
+
+  .chips {
+    justify-content: center;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    margin: 2rem 0 3rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ===== VERY SMALL PHONE (up to 380px) ===== */
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 188px;
+    border-radius: 75px 75px 18px 18px;
+  }
+
+  .tool {
+    padding: 1.3rem;
+  }
+
+  .cta {
+    padding: 1.7rem 1.2rem;
+  }
+
+  .about-text,
+  .lead {
+    font-size: 1.05rem;
+  }
+}

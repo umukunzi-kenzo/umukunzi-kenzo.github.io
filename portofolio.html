@@ -2,101 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Projects</title>
-  <link rel="stylesheet" href="css/about.css" />
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  integrity="sha512-...your-integrity-hash..."
-  crossorigin="anonymous"
-/>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Umukunzi C. Kenzo</title>
+  <meta name="description" content="Selected projects by Umukunzi C. Kenzo, a full-stack developer in Rwanda." />
+  <meta name="theme-color" content="#f7f4ee" />
+  <link rel="canonical" href="https://umukunzi-kenzo.github.io/portofolio.html" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Umukunzi C. Kenzo" />
+  <meta property="og:title" content="Portfolio | Umukunzi C. Kenzo" />
+  <meta property="og:description" content="Selected projects by Umukunzi C. Kenzo, a full-stack developer in Rwanda." />
+  <meta property="og:url" content="https://umukunzi-kenzo.github.io/portofolio.html" />
+  <meta property="og:image" content="https://umukunzi-kenzo.github.io/pic/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Umukunzi C. Kenzo, full-stack developer in Rwanda" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/portfolio-page.css" />
+
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <div class="container nav">
-      <div class="logo"> K<span>E</span>N<span>Z</span>O<span>.</div>
-      <div class="menu-icon" id="menu-icon">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
+<body class="page-portfolio">
+
+  <div class="progress"></div>
+  <div class="spotlight"></div>
+
+  <!-- Navbar (same on every page) -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-logo">K<span>E</span>N<span>Z</span>O<span>.</span></a>
+
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="portofolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portofolio.html" class="active">Portfolio</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li class="talk-button">
-         
-        </li>
       </ul>
-      <a href="contact.html" class="btn talk">Let’s Talk</a>
-    </div>
-  </header><br><br>
 
-  <!-- Main Projects Section -->
-  <section class="about-section fade-in">
-    <div class="container about-content">
-      <div class="about-text">
-        <h1>My Projects</h1>
-        <p>Here are some of the projects I've worked on to practice and showcase my skills:</p>
-  
-        <div class="projects-grid">
-  <!-- Project 1 -->
-  <div class="project-card">
-    <div class="project-description-card">
-      <h3>Personal Portfolio Website (this site)</h3>
-      <p>A modern, responsive portfolio built with HTML, CSS, and JavaScript to showcase my bio, skills, and contact details.</p>
-    </div>
-    <div class="project-image-container">
-      <img src="pic/web.JPG" alt="Project 1 Screenshot" class="project-image">
-    </div>
-    <!-- Additional project info can go here if needed -->
-  </div>
-
-  <!-- Project 2 --> 
-  <div class="project-card">
-    <div class="project-description-card">
-      <h3>User management system</h3>
-      <p>Developed a secure REST API with Express and TypeScript, integrated into a responsive HTML/CSS dashboard for user registration, login, and account management</p>
-    </div>
-    <div class="project-image-container">
-      <img src="pic/demo2resized.png" alt="Project 2 Screenshot" class="project-image">
-    </div>
-  </div>
-</div>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Let’s Talk</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
-  </section>
-  
-  <footer>
-    <div class="container footer-content">
-      <div class="social-icons">
-        <!-- LinkedIn (using linkedin-in icon) -->
-        <a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      
-        
-        <!-- Instagram (same as before) -->
-        <a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        
-        <!-- GitHub (new addition) -->
-        <a href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
+  </header>
+
+  <main class="wrap">
+
+    <!-- PAGE HEADING -->
+    <section class="page-head">
+      <span class="mono" data-reveal>Portfolio</span>
+      <h1 data-reveal>Things I’ve <em>built</em></h1>
+      <p class="lead" data-reveal>A selection of full-stack projects, from product platforms to company websites.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="proj-list">
+
+      <!-- Collabi -->
+      <article class="proj" data-reveal>
+        <div class="proj-media">
+          <span class="fallback" aria-hidden="true">Collabi</span>
+          <img src="pic/collabi.png" alt="Screenshot of Collabi" loading="lazy" onerror="this.remove()" />
+        </div>
+        <div class="proj-body">
+          <p class="proj-meta mono">Software · 2026</p>
+          <h2>Collabi</h2>
+          <p class="proj-summary">A full-stack project and task management platform built for teams that need structure without the clutter.</p>
+          <ul class="proj-points">
+            <li>Unified project, task, and team workflows into a single dashboard with stats and deadlines</li>
+            <li>Role-based access control (Admin, Manager, Member) enforced on both frontend and backend</li>
+            <li>Automated project status updates based on task completion and overdue detection</li>
+          </ul>
+          <div class="chips"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Node.js</span><span>Prisma</span><span>Tailwind CSS</span></div>
+          <div class="proj-links">
+            <a class="proj-link" href="https://collabi-sigma.vercel.app/" target="_blank" rel="noopener noreferrer">Live site <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Storlo -->
+      <article class="proj" data-reveal>
+        <div class="proj-media">
+          <span class="fallback" aria-hidden="true">Storlo</span>
+          <img src="pic/storlo.png" alt="Screenshot of Storlo" loading="lazy" onerror="this.remove()" />
+        </div>
+        <div class="proj-body">
+          <p class="proj-meta mono">Web platform</p>
+          <h2>Storlo</h2>
+          <p class="proj-summary">A Q&amp;A platform where people ask questions and share how they fixed problems, so others can learn from them.</p>
+          <ul class="proj-points">
+            <li>Reading questions, answers, search and profiles is open to everyone; asking and answering needs an account</li>
+            <li>Real upvotes, follows and saved posts, stored on each user’s account</li>
+            <li>Secured API with token-based authentication, rate limiting and security headers</li>
+          </ul>
+          <div class="chips"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
+        </div>
+      </article>
+
+      <!-- Isolynk -->
+      <article class="proj" data-reveal>
+        <div class="proj-media">
+          <span class="fallback" aria-hidden="true">Isolynk</span>
+          <img src="pic/isolynk.png" alt="Screenshot of the Isolynk website" loading="lazy" onerror="this.remove()" />
+        </div>
+        <div class="proj-body">
+          <p class="proj-meta mono">Company website</p>
+          <h2>Isolynk</h2>
+          <p class="proj-summary">The company website for Isolynk, a software and technology startup.</p>
+          <ul class="proj-points">
+            <li>Pages for home, about, services, portfolio and contact</li>
+            <li>Built around the services Isolynk offers: web and software development, mobile apps, IT consulting, digital marketing, and ongoing support</li>
+          </ul>
+          <div class="chips"><span>Next.js</span><span>Tailwind CSS</span></div>
+          <div class="proj-links">
+            <a class="proj-link" href="https://isolynk.vercel.app/" target="_blank" rel="noopener noreferrer">Live site <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- User Management System (no link) -->
+      <article class="proj" data-reveal>
+        <div class="proj-media">
+          <span class="fallback" aria-hidden="true">User Management</span>
+          <img src="pic/demo2resized.png" alt="Screenshot of the user management dashboard" loading="lazy" onerror="this.remove()" />
+        </div>
+        <div class="proj-body">
+          <p class="proj-meta mono">REST API + dashboard</p>
+          <h2>User Management System</h2>
+          <p class="proj-summary">A secure REST API with Express and TypeScript, connected to a responsive HTML/CSS dashboard for user registration, login, and account management.</p>
+          <div class="chips"><span>Express</span><span>TypeScript</span><span>REST API</span><span>HTML &amp; CSS</span></div>
+        </div>
+      </article>
+
+      <!-- This portfolio -->
+      <article class="proj" data-reveal>
+        <div class="proj-media">
+          <span class="fallback" aria-hidden="true">This portfolio</span>
+          <img src="pic/portfolio.png" alt="Screenshot of this portfolio website" loading="lazy" onerror="this.remove()" />
+        </div>
+        <div class="proj-body">
+          <p class="proj-meta mono">Portfolio website · 2026</p>
+          <h2>This portfolio</h2>
+          <p class="proj-summary">The site you’re on: a responsive, animated portfolio with a shared navbar and footer, built by hand and hosted on GitHub.</p>
+          <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </div>
+      </article>
+
+    </section>
+
+    <p class="more" data-reveal>
+      <a href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" class="more-link"><span>More of my code on GitHub</span> <i class="fab fa-github"></i></a>
+    </p>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta" data-reveal>
+      <div>
+        <h2>Have a project in mind?</h2>
+        <p>Let’s talk about it.</p>
       </div>
-       
+      <a href="contact.html" class="btn-solid">Get in touch</a>
+    </section>
+
+  </main>
+
+  <!-- Footer (same on every page) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <p class="footer-line">Building the web, one project at a time.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Umukunzi C. Kenzo</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Script for Menu -->
-  <script>
-    const menuIcon = document.getElementById("menu-icon");
-    const navLinks = document.getElementById("nav-links");
-    menuIcon.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  </script>
+  <!-- Floating "Back to top" (transparent words, appears after scrolling) -->
+  <a href="#top" class="top-btn" aria-label="Back to top">
+    <span class="label">Back to top</span>
+    <span class="arrow" aria-hidden="true">
+      <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
+    </span>
+    <span class="top-bar"></span>
+  </a>
+
+  <script src="nav.js"></script>
+  <script src="about.js"></script>
 </body>
 </html>

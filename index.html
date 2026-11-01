@@ -2,91 +2,171 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kenzo's Website</title>
-  <link rel="stylesheet" href="/css/home.css"/>
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  integrity="sha512-...your-integrity-hash..."
-  crossorigin="anonymous"
-/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Umukunzi C. Kenzo | Full-stack developer</title>
+  <meta name="description" content="Portfolio of Umukunzi C. Kenzo, a full-stack developer in Rwanda building clean, fast web apps." />
+  <meta name="theme-color" content="#f7f4ee" />
+  <link rel="canonical" href="https://umukunzi-kenzo.github.io/" />
 
-  
-<header>
-  <div class="container nav">
-    <div class="logo">K<span>E</span>N<span>Z</span>O<span>.</span></div>
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-    <!-- Hamburger icon (only on mobile) -->
-    <div class="menu-toggle" id="menu-toggle">
-      <i class="fas fa-bars"></i>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Umukunzi C. Kenzo" />
+  <meta property="og:title" content="Umukunzi C. Kenzo | Full-stack developer" />
+  <meta property="og:description" content="Portfolio of Umukunzi C. Kenzo, a full-stack developer in Rwanda building clean, fast web apps." />
+  <meta property="og:url" content="https://umukunzi-kenzo.github.io/" />
+  <meta property="og:image" content="https://umukunzi-kenzo.github.io/pic/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Umukunzi C. Kenzo, full-stack developer in Rwanda" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/home-page.css" />
+
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="page-home">
+
+  <div class="progress"></div>
+  <div class="spotlight"></div>
+
+  <!-- Navbar (same on every page) -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-logo">K<span>E</span>N<span>Z</span>O<span>.</span></a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portofolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Let’s Talk</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <!-- Centered nav links -->
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="portofolio.html">Portfolio</a></li>
-      <li><a href="contact.html">Contacts</a></li>
-    </ul>
+  <main class="wrap">
 
-    <!-- Right aligned call-to-action button -->
-    <a class="btn talk desktop-btn" href="contact.html">Let’s Talk</a>
-  </div>
-</header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <div class="text-section intro-text"> <!-- Added the intro-text class here -->
-
-        <h2>Hey there, I'm Kenzo</h2>
-        <h3>Aspiring Full-Stack Developer & Creative Technologist</h3>
-        <p>I craft digital experiences with elegance and intention. Whether it's front-end finesse or back-end logic, I build with clarity, curiosity, and a touch of magic. Let's create something unforgettable!.</p>
-        <div class="cta-buttons">
-         <a href="contact.html">  <button class="btn hire" >Hire me </button></a>
-         <a href="portofolio.html"> <button class="btn outline">See projects</button></a>
+    <!-- HERO -->
+    <section class="home-hero">
+      <div class="home-text">
+        <p class="status" data-reveal><span class="dot"></span>Based in Rwanda</p>
+        <h1 data-reveal>Hi, I’m <em>Umukunzi C. Kenzo</em></h1>
+        <p class="lead" data-reveal>I’m a full-stack developer building clean, fast web apps, from the interface to the API behind it.</p>
+        <div class="actions" data-reveal>
+          <a href="portofolio.html" class="btn-solid">See my projects</a>
+          <a href="contact.html" class="btn-ghost">Contact me</a>
         </div>
       </div>
-      <div class="image-section">
-        <div class="image-wrapper">
-          <img src=" pic/foruse3.jpg" alt="profile">
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <footer class="footer">
-    <div class="container footer-socials">
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" 
-         target="_blank" 
-         rel="noopener noreferrer"
-         aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      
-      
-        <!-- Instagram (same as before) -->
-        <a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
+      <div class="home-photo" data-reveal>
+        <img src="pic/foruse3.jpg" alt="Portrait of Umukunzi C. Kenzo" />
+        <span class="photo-chip">Full-stack developer</span>
+      </div>
+    </section>
+
+    <!-- SELECTED WORK -->
+    <section class="block">
+      <div class="block-title" data-reveal><h2>Selected work</h2></div>
+
+      <div class="work-list">
+        <a href="portofolio.html" class="work" data-reveal>
+          <span class="work-num mono">01</span>
+          <div class="work-info">
+            <h3>Collabi</h3>
+            <p>A project and task management platform for teams that need structure without the clutter.</p>
+          </div>
+          <div class="chips"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span></div>
+          <span class="work-arrow"><i class="fas fa-arrow-right"></i></span>
         </a>
-      <!-- GitHub -->
-      <a href="https://www.github.com/umukunzi-kenzo" 
-         target="_blank" 
-         rel="noopener noreferrer"
-         aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      
-      
+
+        <a href="portofolio.html" class="work" data-reveal>
+          <span class="work-num mono">02</span>
+          <div class="work-info">
+            <h3>Storlo</h3>
+            <p>A Q&amp;A platform where people ask questions and share how they fixed problems.</p>
+          </div>
+          <div class="chips"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
+          <span class="work-arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+
+        <a href="portofolio.html" class="work" data-reveal>
+          <span class="work-num mono">03</span>
+          <div class="work-info">
+            <h3>Isolynk</h3>
+            <p>The company website for Isolynk, a software and technology startup.</p>
+          </div>
+          <div class="chips"><span>Next.js</span><span>Tailwind CSS</span></div>
+          <span class="work-arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+      </div>
+
+      <a href="portofolio.html" class="more-link" data-reveal><span>View all projects</span> <i class="fas fa-arrow-right"></i></a>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta" data-reveal>
+      <div>
+        <h2>Let’s work together</h2>
+        <p>Have a project in mind? Reach out.</p>
+      </div>
+      <a href="contact.html" class="btn-solid">Get in touch</a>
+    </section>
+
+  </main>
+
+  <!-- Footer (same on every page) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <p class="footer-line">Building the web, one project at a time.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Umukunzi C. Kenzo</p>
+      </div>
     </div>
-    
   </footer>
- <!-- <p class="copy">&copy; K<span>E</span>N<span>Z</span>O<span>.</span></p>-->
-  
-  <script src="script.js"></script>
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Floating "Back to top" (transparent words, appears after scrolling) -->
+  <a href="#top" class="top-btn" aria-label="Back to top">
+    <span class="label">Back to top</span>
+    <span class="arrow" aria-hidden="true">
+      <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
+    </span>
+    <span class="top-bar"></span>
+  </a>
 
+  <script src="nav.js"></script>
+  <script src="about.js"></script>
 </body>
 </html>

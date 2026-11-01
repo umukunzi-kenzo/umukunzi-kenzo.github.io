@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/" />
+  <title>Page not found | Umukunzi C. Kenzo</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#f7f4ee" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/notfound-page.css" />
+
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="page-notfound">
+
+  <div class="progress"></div>
+  <div class="spotlight"></div>
+
+  <!-- Navbar (same on every page) -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-logo">K<span>E</span>N<span>Z</span>O<span>.</span></a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portofolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Let’s Talk</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="nf">
+      <p class="nf-code" aria-hidden="true" data-reveal>404</p>
+      <span class="mono" data-reveal>Page not found</span>
+      <h1 data-reveal>This page took a <em>wrong turn</em></h1>
+      <p class="lead" data-reveal>The page you’re looking for doesn’t exist or has moved. Let’s get you back on track.</p>
+      <div class="actions" data-reveal>
+        <a href="index.html" class="btn-solid">Back to home</a>
+        <a href="portofolio.html" class="btn-ghost">See my projects</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same on every page) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <p class="footer-line">Building the web, one project at a time.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Umukunzi C. Kenzo</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script src="about.js"></script>
+</body>
+</html>

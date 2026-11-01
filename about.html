@@ -2,98 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - Kenzo</title>
-  <link rel="stylesheet" href="/css/about.css"/>
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  integrity="sha512-...your-integrity-hash..."
-  crossorigin="anonymous"
-/>
-</head>
-<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Umukunzi C. Kenzo</title>
+  <meta name="description" content="About Umukunzi C. Kenzo, a full-stack developer in Rwanda: the tools I use and how I work." />
+  <meta name="theme-color" content="#f7f4ee" />
+  <link rel="canonical" href="https://umukunzi-kenzo.github.io/about.html" />
 
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Umukunzi C. Kenzo" />
+  <meta property="og:title" content="About | Umukunzi C. Kenzo" />
+  <meta property="og:description" content="About Umukunzi C. Kenzo, a full-stack developer in Rwanda: the tools I use and how I work." />
+  <meta property="og:url" content="https://umukunzi-kenzo.github.io/about.html" />
+  <meta property="og:image" content="https://umukunzi-kenzo.github.io/pic/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Umukunzi C. Kenzo, full-stack developer in Rwanda" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/about-page.css" />
+
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <div class="container nav">
-      <div class="logo"> K<span>E</span>N<span>Z</span>O<span>.</div>
-      <div class="menu-icon" id="menu-icon">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
+<body class="page-about">
+
+  <div class="progress"></div>
+  <div class="spotlight"></div>
+
+  <!-- Navbar (same on every page) -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-logo">K<span>E</span>N<span>Z</span>O<span>.</span></a>
+
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="portofolio.html">Portfolio</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li class="talk-button">
-         
-        </li>
       </ul>
-      <a href="contact.html" class="btn talk">Let’s Talk</a>
-    </div>
-  </header><br><br>
 
-      
-  
-  <!-- ABOUT SECTION -->
-  <section class="hero">
-    <div class="container about-content">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>Hello! I’m UMUKUNZI Kenzo, a dedicated web development student exploring the full-stack journey one project at a time. I enjoy creating simple, functional websites and web applications as I sharpen my skills in both front-end and back-end technologies.</p>
-
-<p>Right now, I’m focused on building real-world projects and strengthening my skills across the full stack. I believe in learning by doing and enjoy turning ideas into working, meaningful web experiences.</p>
-
-<p>If you’re curious about my work or interested in working together, don’t hesitate to reach out. Let’s bring great ideas to life.</p>
-
-        <a href="portofolio.html"> <button class="btn outline">See projects</button></a>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Let’s Talk</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <br>
-      <div class="about-image">
-        <div class="image-wrapper">
-          <img src="pic/foruse3.jpg" alt="Ethereal's portrait"/>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <img class="avatar" src="pic/foruse3.jpg" alt="Portrait of Umukunzi C. Kenzo" data-reveal />
+      <div>
+        <p class="status" data-reveal><span class="dot"></span>Based in Rwanda</p>
+        <h1 data-reveal>Umukunzi C. Kenzo</h1>
+        <p class="role" data-reveal>Full-stack developer</p>
+        <p class="lead" data-reveal>I build simple, functional websites and web apps, from clean interfaces to the APIs behind them.</p>
+        <div class="actions" data-reveal>
+          <a href="portofolio.html" class="btn-solid">See my projects</a>
+          <a href="contact.html" class="btn-ghost">Contact me</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <div class="social-icons">
-        <!-- LinkedIn (using linkedin-in icon) -->
-        <a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-         
-        <!-- Instagram (same as before) -->
-        <a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        
-        <!-- GitHub (new addition) -->
-        <a href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
+    <!-- ABOUT -->
+    <section class="block" data-reveal>
+      <div class="block-title"><span class="mono">01</span><h2>About me</h2></div>
+      <p class="about-text">I’m a full-stack developer who builds simple, functional websites and web applications, working across both front-end and back-end technologies. I enjoy turning ideas into working, meaningful web experiences.</p>
+    </section>
+
+    <!-- TOOLBOX -->
+    <section class="block">
+      <div class="block-title" data-reveal><span class="mono">02</span><h2>Toolbox</h2></div>
+      <div class="tools">
+        <article class="tool" data-reveal>
+          <h3>Front-end</h3>
+          <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Next.js</span><span>Tailwind CSS</span></div>
+        </article>
+        <article class="tool" data-reveal>
+          <h3>Back-end</h3>
+          <div class="chips"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>REST APIs</span><span>TypeScript</span></div>
+        </article>
+        <article class="tool" data-reveal>
+          <h3>Workflow</h3>
+          <div class="chips"><span>Git &amp; GitHub</span><span>Responsive design</span><span>Web hosting</span></div>
+        </article>
       </div>
-      
+    </section>
+
+    <!-- HOW I WORK -->
+    <section class="block">
+      <div class="block-title" data-reveal><span class="mono">03</span><h2>How I work</h2></div>
+      <div class="steps">
+        <div class="step" data-reveal>
+          <span class="mono">01</span>
+          <h3>Understand</h3>
+          <p>Learn what the project needs.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="mono">02</span>
+          <h3>Plan</h3>
+          <p>Break it into small steps.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="mono">03</span>
+          <h3>Build</h3>
+          <p>Write clean, readable code.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="mono">04</span>
+          <h3>Improve</h3>
+          <p>Test, fix, and polish.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta" data-reveal>
+      <div>
+        <h2>Let’s work together</h2>
+        <p>Curious about my work? Reach out.</p>
+      </div>
+      <a href="contact.html" class="btn-solid">Get in touch</a>
+    </section>
+
+  </main>
+
+  <!-- Footer (same on every page) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <p class="footer-line">Building the web, one project at a time.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/umukunzi-cevin-kenzo-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com/umukunzikenzo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.github.com/umukunzi-kenzo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Umukunzi C. Kenzo</p>
+      </div>
     </div>
-  </footer><br>
-  
-  <script>
-    const menuIcon = document.querySelector('.menu-icon');
-    const navLinks = document.querySelector('.nav-links');
-  
-    menuIcon.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-  
+  </footer>
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Floating "Back to top" (transparent words, appears after scrolling) -->
+  <a href="#top" class="top-btn" aria-label="Back to top">
+    <span class="label">Back to top</span>
+    <span class="arrow" aria-hidden="true">
+      <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
+    </span>
+    <span class="top-bar"></span>
+  </a>
 
+  <script src="nav.js"></script>
+  <script src="about.js"></script>
 </body>
 </html>
-
- 

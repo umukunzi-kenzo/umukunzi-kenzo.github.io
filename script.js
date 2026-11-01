@@ -9,16 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
  
-  // Wait for the page to fully load
-  window.addEventListener('load', function () {
-    // Select the elements you want to animate
-    const introText = document.querySelector('.intro-text');
-    const imageWrapper = document.querySelector('.image-wrapper');
-    
-    // Add the class that triggers the animation
-    introText.classList.add('animate-in');
-    imageWrapper.classList.add('animate-in');
-  });
+  // Wait for the page to fully load, then play the intro animation
+window.addEventListener('load', function () {
+  const introText = document.querySelector('.intro-text');
+  const imageWrapper = document.querySelector('.image-wrapper');
+
+  introText.classList.add('animate-in');
+  imageWrapper.classList.add('animate-in');
+});
  
  
  
